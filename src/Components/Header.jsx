@@ -20,7 +20,11 @@ const Header = () => {
 
           {cartItems.map((value) => {
             return (
-              <h5 className="cart-number" onClick={() => handleCart(true)}>
+              <h5
+                key={value.id}
+                className="cart-number"
+                onClick={() => handleCart(true)}
+              >
                 {value.quantity}
               </h5>
             );

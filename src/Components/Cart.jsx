@@ -9,7 +9,6 @@ import {
 import { useEffect } from "react";
 
 const Cart = ({ cartIsEmpty }) => {
-  //? this prop is pass when the addtocart button click check the productcart.jsx
   const dispatch = useDispatch();
   const { isCartOpen, cartItems } = useSelector((state) => state.cart);
 
@@ -76,6 +75,9 @@ const Cart = ({ cartIsEmpty }) => {
               <div className="cart-details">
                 <p>{value.title}</p>
                 <h4 className="cart-price">${value.price}</h4>
+                <p className="cart-total-price">
+                  Total: ${value.totalPrice ? value.totalPrice : value.price}
+                </p>
               </div>
 
               <div className="cart-btn">
