@@ -13,6 +13,7 @@
 }
 html {
   font-size: 62.5%;
+  overflow-x: hidden;
 }
 
 body {
@@ -20,8 +21,6 @@ body {
   line-height: 1.4;
   font-family: "Poppins", sans-serif;
   height: auto;
-  width: 100%;
-  overflow: hidden;
 }
 
 .overlay {
@@ -240,6 +239,10 @@ body {
 }
 
 @media (max-width: 525px) {
+  .body {
+    /* overflow-x: hidden; */
+  }
+
   .header-content h1 {
     font-size: 22px;
   }
