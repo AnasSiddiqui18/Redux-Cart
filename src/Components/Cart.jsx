@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { RxCross2 } from "react-icons/rx";
 import { useSelector, useDispatch } from "react-redux";
 import {
@@ -9,20 +9,11 @@ import {
 } from "../Store/Slices/Cartslices";
 import { useEffect } from "react";
 
-// const initialPrice = {
-//   1: 1099,
-//   2: 649,
-//   3: 9999,
-//   4: 899,
-//   5: 999,
-//   6: 5999,
-//   7: 1599,
-//   8: 3699,
-// };
-
 const Cart = ({ cartIsEmpty }) => {
   const dispatch = useDispatch();
   const { isCartOpen, cartItems } = useSelector((state) => state.cart);
+
+  const [checkout, setcheckout] = useState(false);
 
   const handleCart = (close) => {
     dispatch(toggleCart(close));
@@ -46,6 +37,8 @@ const Cart = ({ cartIsEmpty }) => {
 
   const clearCart = () => {
     dispatch(emptyCart());
+
+    setcheckout(true);
   };
 
   const totalQuantity = cartItems.reduce(
@@ -127,7 +120,7 @@ const Cart = ({ cartIsEmpty }) => {
             <div className="cart-footer">
               <a
                 href="#"
-                className="checkout-text"
+                className={`checkout-text  ${checkout === true ? "hide" : ""}`}
                 onClick={() => handleCart(false)}
               >
                 Checkout
