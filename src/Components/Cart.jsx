@@ -116,6 +116,16 @@ const Cart = ({ cartIsEmpty }) => {
               </div>
             ))}
           </div>
+
+          <div className="cart-footer">
+            <a
+              href="#"
+              className="checkout-text"
+              onClick={() => handleCart(false)}
+            >
+              Checkout
+            </a>
+          </div>
         </div>
       )}
     </>

@@ -239,6 +239,23 @@ body {
   cursor: pointer;
 }
 
+.cart-footer {
+  display: flex;
+  justify-content: end;
+  position: absolute;
+  bottom: 1%;
+  right: 2%;
+}
+
+.checkout-text {
+  text-decoration: none;
+  color: #fff;
+  background-color: rgb(97, 31, 97);
+  padding: 7px;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
 /*? media queries  */
 
 @media (max-width: 1024px) {
