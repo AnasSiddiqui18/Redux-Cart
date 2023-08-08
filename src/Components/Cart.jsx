@@ -53,61 +53,64 @@ const Cart = ({ cartIsEmpty }) => {
       {isCartOpen && (
         <div className="overlay" onClick={() => handleCart(false)}></div>
       )}
-      <div className={`cart ${isCartOpen ? "show" : ""}`}>
-        <div className="cart-top">
-          {cartItems.length > 0 ? (
-            <div className="cart-top-text">
-              Cart (
-              {cartItems.reduce((total, item) => total + item.quantity, 0)})
+
+      {isCartOpen && (
+        <div className={`cart`}>
+          <div className="cart-top">
+            {cartItems.length > 0 ? (
+              <div className="cart-top-text">
+                Cart (
+                {cartItems.reduce((total, item) => total + item.quantity, 0)})
+              </div>
+            ) : (
+              <div className="cart-top-text">Cart (0)</div>
+            )}
+
+            <div className="cross">
+              <RxCross2 onClick={() => handleCart(false)} />
             </div>
-          ) : (
-            <div className="cart-top-text">Cart (0)</div>
+          </div>
+          {cartIsEmpty === true && <p className="cart-para">Cart is empty!</p>}
+
+          {cartIsEmpty === false && (
+            <a href="#" className="empty-btn" onClick={clearCart}>
+              Empty Cart
+            </a>
           )}
 
-          <div className="cross">
-            <RxCross2 onClick={() => handleCart(false)} />
+          <div className="cart-content">
+            {cartItems.map((value, index) => (
+              <div className="box" key={value.id}>
+                <div className="cart-img">
+                  <img src={value.img} alt="" />
+                </div>
+
+                <div className="cart-details">
+                  <p>{value.title}</p>
+                  <h4 className="cart-price">${value.price}</h4>
+                  <p className="cart-total-price">Total: ${value.totalPrice}</p>
+                </div>
+
+                <div className="cart-btn">
+                  <button
+                    onClick={() => incrementCount(index, value.id)}
+                    className="increment"
+                  >
+                    +
+                  </button>
+                  <h2>{value.quantity}</h2>
+                  <button
+                    onClick={() => decrementCount(index, value.id)}
+                    className="decrement"
+                  >
+                    -
+                  </button>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
-        {cartIsEmpty === true && <p className="cart-para">Cart is empty!</p>}
-
-        {cartIsEmpty === false && (
-          <a href="#" className="empty-btn" onClick={clearCart}>
-            Empty Cart
-          </a>
-        )}
-
-        <div className="cart-content">
-          {cartItems.map((value, index) => (
-            <div className="box" key={value.id}>
-              <div className="cart-img">
-                <img src={value.img} alt="" />
-              </div>
-
-              <div className="cart-details">
-                <p>{value.title}</p>
-                <h4 className="cart-price">${value.price}</h4>
-                <p className="cart-total-price">Total: ${value.totalPrice}</p>
-              </div>
-
-              <div className="cart-btn">
-                <button
-                  onClick={() => incrementCount(index, value.id)}
-                  className="increment"
-                >
-                  +
-                </button>
-                <h2>{value.quantity}</h2>
-                <button
-                  onClick={() => decrementCount(index, value.id)}
-                  className="decrement"
-                >
-                  -
-                </button>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
+      )}
     </>
   );
 };

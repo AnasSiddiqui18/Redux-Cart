@@ -141,6 +141,7 @@ body {
   width: 370px;
   transition: 0.3s ease-in;
   overflow-y: auto;
+  box-shadow: 1px 1px 10px grey;
 }
 
 .cart .cart-top {
