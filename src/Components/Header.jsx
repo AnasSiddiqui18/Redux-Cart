@@ -15,8 +15,12 @@ const Header = () => {
   // Calculate the total quantity of items in the cart
   const totalQuantity = cartItems.reduce(
     (total, item) => total + item.quantity,
-    0
+    0 //? this is the initial value of the total
   );
+
+  //? How the reducer function is working ?//
+
+  //* First of all the value of the total is 0 right and when we add any item so initially the quantity of the item is 1 so reducer function adds the value of the total with the value of the quantity right so 0 + 1 = 1 so now the quantity is 1
 
   return (
     <div className="header-Section">

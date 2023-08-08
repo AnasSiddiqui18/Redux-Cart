@@ -9,16 +9,16 @@ import {
 } from "../Store/Slices/Cartslices";
 import { useEffect } from "react";
 
-const initialPrice = {
-  1: 1099,
-  2: 649,
-  3: 9999,
-  4: 899,
-  5: 999,
-  6: 5999,
-  7: 1599,
-  8: 3699,
-};
+// const initialPrice = {
+//   1: 1099,
+//   2: 649,
+//   3: 9999,
+//   4: 899,
+//   5: 999,
+//   6: 5999,
+//   7: 1599,
+//   8: 3699,
+// };
 
 const Cart = ({ cartIsEmpty }) => {
   const dispatch = useDispatch();
@@ -85,10 +85,8 @@ const Cart = ({ cartIsEmpty }) => {
 
               <div className="cart-details">
                 <p>{value.title}</p>
-                <h4 className="cart-price">${initialPrice[value.id]}</h4>
-                <p className="cart-total-price">
-                  Total: ${value.quantity * initialPrice[value.id]}
-                </p>
+                <h4 className="cart-price">${value.price}</h4>
+                <p className="cart-total-price">Total: ${value.totalPrice}</p>
               </div>
 
               <div className="cart-btn">
