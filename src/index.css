@@ -23,6 +23,14 @@ body {
   overflow-x: hidden !important;
 }
 
+::selection {
+  background-color: transparent;
+  color: inherit;
+}
+* {
+  -webkit-user-drag: none;
+}
+
 .overlay {
   position: fixed;
   top: 0;
@@ -166,19 +174,31 @@ body {
   right: 4%;
 }
 
-.show-text {
+.empty-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.empty-content img {
+  max-width: 100%;
+  width: 18rem;
+  opacity: 0.7;
+}
+
+.cart-para {
+  text-align: center;
+  font-size: 2rem;
+}
+
+/* .show-text {
   display: block;
 }
 
 .hide {
   display: none;
-}
-
-.cart-para {
-  text-align: center;
-  margin-top: 2rem;
-  font-size: 2rem;
-}
+} */
 
 .cart-content {
   margin-top: 2rem;
