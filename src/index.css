@@ -137,14 +137,17 @@ body {
   top: 0;
   height: 100%;
   background-color: #fff;
-  right: -370px; /* Initially off-screen */
+  right: 0;
   width: 370px;
   transition: 0.3s ease-in;
   overflow-y: auto;
+  /* transform: translateX(370px); */
+  display: none;
 }
 
 .show {
-  right: 0; /* Initially off-screen */
+  right: 0;
+  transform: translateX(0);
   transition: 0.3s ease-in;
 }
 
