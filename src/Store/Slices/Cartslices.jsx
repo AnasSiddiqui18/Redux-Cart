@@ -43,26 +43,25 @@ const Cartslice = createSlice({
       }
     },
 
+    // Inside your reducer or state management code
+
     incrementItem(state, action) {
-      // console.log(action.payload);
       const { itemIndex, itemId } = action.payload;
-      console.log(itemIndex);
       const item = state.cartItems[itemIndex];
+
       if (item) {
         item.quantity++;
         item.totalPrice = item.quantity * initialPrice[itemId];
-        // item.totalPrice = item.quantity * initialPrice[itemId]; //? Incrementing the price by the initial price
-
-        // console.log(item.title);
       }
     },
 
     decrementItem(state, action) {
       const { itemIndex, itemId } = action.payload;
       const item = state.cartItems[itemIndex];
-      if (item && item.quantity > 0) {
+
+      if (item && item.quantity > 1) {
         item.quantity--;
-        item.price -= initialPrice[itemId];
+        item.totalPrice = item.quantity * initialPrice[itemId]; // Update total price based on new quantity
       }
     },
 
