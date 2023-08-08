@@ -145,7 +145,6 @@ body {
 
 .show {
   right: 0; /* Initially off-screen */
-  transform: translateX(0);
   transition: 0.3s ease-in;
 }
 
