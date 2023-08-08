@@ -244,13 +244,14 @@ body {
   cursor: pointer;
 }
 
-/* .cart-footer {
+.cart-footer {
   display: flex;
   justify-content: end;
   margin: 1rem;
-
   bottom: 0;
   right: 2%;
+  /* position: absolute; */
+  /* bottom: 0; */
 }
 
 .checkout-text {
@@ -260,7 +261,7 @@ body {
   padding: 7px;
   border-radius: 12px;
   cursor: pointer;
-} */
+}
 
 /*? media queries  */
 
@@ -341,5 +342,9 @@ body {
 
   .cart-top-text {
     font-size: 2rem;
+  }
+
+  .checkout-text {
+    font-size: 1.2rem;
   }
 }
