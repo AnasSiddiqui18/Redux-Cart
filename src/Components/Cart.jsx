@@ -48,6 +48,11 @@ const Cart = ({ cartIsEmpty }) => {
     dispatch(emptyCart());
   };
 
+  const totalQuantity = cartItems.reduce(
+    (total, item) => total + item.quantity,
+    0
+  );
+
   return (
     <>
       {isCartOpen && (
@@ -58,10 +63,7 @@ const Cart = ({ cartIsEmpty }) => {
         <div className={`cart`}>
           <div className="cart-top">
             {cartItems.length > 0 ? (
-              <div className="cart-top-text">
-                Cart (
-                {cartItems.reduce((total, item) => total + item.quantity, 0)})
-              </div>
+              <div className="cart-top-text">Cart ({totalQuantity})</div>
             ) : (
               <div className="cart-top-text">Cart (0)</div>
             )}
