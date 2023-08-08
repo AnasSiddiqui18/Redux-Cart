@@ -74,7 +74,7 @@ const Cart = ({ cartIsEmpty }) => {
           </div>
           {cartIsEmpty === true && (
             <div className="empty-content">
-              <img src="/public/images/cart.png" alt="no-img" />
+              <img src="/images/cart.png" alt="no-img" />
               <p className="cart-para">Cart is empty!</p>
             </div>
           )}
