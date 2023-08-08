@@ -22,14 +22,11 @@ body {
   height: auto;
   overflow-x: hidden !important;
 }
-
+/* 
 ::selection {
   background-color: transparent;
   color: inherit;
-}
-* {
-  -webkit-user-drag: none;
-}
+} */
 
 .overlay {
   position: fixed;
@@ -97,7 +94,8 @@ body {
 }
 
 .home-section {
-  margin: 4rem 0;
+  margin-top: 9rem;
+  margin-bottom: 4rem;
 }
 
 .home-content {

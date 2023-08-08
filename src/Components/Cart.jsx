@@ -95,7 +95,13 @@ const Cart = ({ cartIsEmpty }) => {
                 <div className="cart-details">
                   <p>{value.title}</p>
                   <h4 className="cart-price">${value.price}</h4>
-                  <p className="cart-total-price">Total: ${value.totalPrice}</p>
+                  {value.quantity > 1 ? (
+                    <p className="cart-total-price">
+                      Total: ${value.totalPrice}
+                    </p>
+                  ) : (
+                    <p className="cart-total-price">Total: ${value.price}</p>
+                  )}
                 </div>
 
                 <div className="cart-btn">
