@@ -240,7 +240,7 @@ body {
 
 @media (max-width: 525px) {
   .body {
-    /* overflow-x: hidden; */
+    overflow-x: hidden !important;
   }
 
   .header-content h1 {

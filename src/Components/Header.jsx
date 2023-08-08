@@ -26,7 +26,7 @@ const Header = () => {
     <div className="header-Section">
       <div className="container">
         <div className="header-content">
-          <h1>Chcking</h1>
+          <h1>Redux</h1>
 
           {/* Display the total quantity */}
           <h5 className="cart-number" onClick={() => handleCart(true)}>
