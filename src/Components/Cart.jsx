@@ -65,7 +65,7 @@ const Cart = ({ cartIsEmpty }) => {
               <RxCross2 onClick={() => handleCart(false)} />
             </div>
           </div>
-          {cartIsEmpty === true && (
+          {(cartIsEmpty || checkout) && (
             <div className="empty-content">
               <img src="/images/cart.png" alt="no-img" />
               <p className="cart-para">Cart is empty!</p>
@@ -73,7 +73,11 @@ const Cart = ({ cartIsEmpty }) => {
           )}
 
           {cartIsEmpty === false && (
-            <a href="#" className="empty-btn" onClick={clearCart}>
+            <a
+              href="#"
+              className={`empty-btn ${checkout && "hide"}`}
+              onClick={clearCart}
+            >
               Empty Cart
             </a>
           )}
