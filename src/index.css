@@ -22,11 +22,11 @@ body {
   height: auto;
   overflow-x: hidden !important;
 }
-/* 
+
 ::selection {
   background-color: transparent;
   color: inherit;
-} */
+}
 
 .overlay {
   position: fixed;

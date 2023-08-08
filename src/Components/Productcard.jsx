@@ -4,9 +4,9 @@ import { addItem } from "../Store/Slices/Cartslices";
 const Productcard = ({ item, setCartIsEmpty }) => {
   console.log(item);
 
-  const controlImgDrag = (event) => {
-    event.preventDefault();
-  };
+  // const controlImgDrag = (event) => {
+  //   event.preventDefault();
+  // };
 
   const dispatch = useDispatch();
 
@@ -20,7 +20,7 @@ const Productcard = ({ item, setCartIsEmpty }) => {
       <div className="product-img">
         <img
           className="pro-image"
-          onDragStart={(e) => controlImgDrag(e)}
+          /*          onDragStart={(e) => controlImgDrag(e)} */
           src={item.img}
           alt="image not found"
         />
