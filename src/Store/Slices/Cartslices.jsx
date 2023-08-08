@@ -51,7 +51,8 @@ const Cartslice = createSlice({
       const item = state.cartItems[itemIndex];
       if (item) {
         item.quantity++;
-        item.price += initialPrice[itemId]; //? Incrementing the price by the initial price
+        item.totalPrice = item.quantity * initialPrice[itemId];
+        /* item.price += initialPrice[itemId];  */ //? Incrementing the price by the initial price
         // console.log(item.title);
       }
     },

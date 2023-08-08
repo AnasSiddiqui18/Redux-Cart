@@ -1,3 +1,4 @@
+import React from "react";
 import { RxCross2 } from "react-icons/rx";
 import { useSelector, useDispatch } from "react-redux";
 import {
@@ -7,6 +8,17 @@ import {
   emptyCart,
 } from "../Store/Slices/Cartslices";
 import { useEffect } from "react";
+
+const initialPrice = {
+  1: 1099,
+  2: 649,
+  3: 9999,
+  4: 899,
+  5: 999,
+  6: 5999,
+  7: 1599,
+  8: 3699,
+};
 
 const Cart = ({ cartIsEmpty }) => {
   const dispatch = useDispatch();
@@ -22,7 +34,7 @@ const Cart = ({ cartIsEmpty }) => {
     } else {
       document.body.classList.remove("scroll");
     }
-  });
+  }, [isCartOpen]); // Added dependency to useEffect
 
   const incrementCount = (itemIndex, itemId) => {
     dispatch(incrementItem({ itemIndex, itemId }));
@@ -44,11 +56,10 @@ const Cart = ({ cartIsEmpty }) => {
       <div className={`cart ${isCartOpen ? "show" : ""}`}>
         <div className="cart-top">
           {cartItems.length > 0 ? (
-            cartItems.map((value) => (
-              <div key={value.id} className="cart-top-text">
-                Cart ({value.quantity})
-              </div>
-            ))
+            <div className="cart-top-text">
+              Cart (
+              {cartItems.reduce((total, item) => total + item.quantity, 0)})
+            </div>
           ) : (
             <div className="cart-top-text">Cart (0)</div>
           )}
@@ -74,9 +85,9 @@ const Cart = ({ cartIsEmpty }) => {
 
               <div className="cart-details">
                 <p>{value.title}</p>
-                <h4 className="cart-price">${value.price}</h4>
+                <h4 className="cart-price">${initialPrice[value.id]}</h4>
                 <p className="cart-total-price">
-                  Total: ${value.totalPrice ? value.totalPrice : value.price}
+                  Total: ${value.quantity * initialPrice[value.id]}
                 </p>
               </div>
 

@@ -13,7 +13,7 @@
 }
 html {
   font-size: 62.5%;
-  overflow-x: hidden !important;
+  overflow-x: hidden;
 }
 
 body {
@@ -22,6 +22,7 @@ body {
   font-family: "Poppins", sans-serif;
   height: auto;
   width: 100%;
+  overflow-x: hidden;
 }
 
 .overlay {
@@ -138,14 +139,15 @@ body {
   top: 0;
   height: 100%;
   background-color: #fff;
-  right: 0;
+  right: -370px; /* Initially off-screen */
   width: 370px;
-  transform: translateX(370px);
+  transform: translateX(0); /* Translate it back in when opened */
   transition: 0.3s ease-in;
   overflow-y: auto;
 }
 
 .show {
+  right: 0; /* Initially off-screen */
   transform: translateX(0);
   transition: 0.3s ease-in;
 }

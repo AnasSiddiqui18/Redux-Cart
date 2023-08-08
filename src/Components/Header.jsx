@@ -12,32 +12,30 @@ const Header = () => {
     dispatch(toggleCart(open));
   };
 
+  // Calculate the total quantity of items in the cart
+  const totalQuantity = cartItems.reduce(
+    (total, item) => total + item.quantity,
+    0
+  );
+
   return (
     <div className="header-Section">
       <div className="container">
         <div className="header-content">
           <h1>Redux</h1>
 
-          {cartItems.map((value) => {
-            return (
-              <h5
-                key={value.id}
-                className="cart-number"
-                onClick={() => handleCart(true)}
-              >
-                {value.quantity}
-              </h5>
-            );
-          })}
+          {/* Display the total quantity */}
+          <h5 className="cart-number" onClick={() => handleCart(true)}>
+            {totalQuantity}
+          </h5>
 
+          {/* Clicking on the cart icon opens the cart */}
           <HiShoppingCart
             className="cart-icon"
             onClick={() => {
               handleCart(true);
             }}
           />
-
-          {/* Map through the cartItems array */}
         </div>
       </div>
     </div>
