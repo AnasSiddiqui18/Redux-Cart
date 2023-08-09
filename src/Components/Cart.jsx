@@ -72,12 +72,8 @@ const Cart = ({ cartIsEmpty }) => {
             </div>
           )}
 
-          {cartIsEmpty === false && (
-            <a
-              href="#"
-              className={`empty-btn ${checkout && "hide"}`}
-              onClick={clearCart}
-            >
+          {cartItems.length >= 1 && (
+            <a href="#" className="empty-btn" onClick={clearCart}>
               Empty Cart
             </a>
           )}
@@ -120,11 +116,11 @@ const Cart = ({ cartIsEmpty }) => {
             ))}
           </div>
 
-          {cartIsEmpty === false && (
+          {cartItems.length >= 1 && (
             <div className="cart-footer">
               <a
                 href="#"
-                className={`checkout-text  ${checkout === true ? "hide" : ""}`}
+                className="checkout-text"
                 onClick={() => handleCart(false)}
               >
                 Checkout
