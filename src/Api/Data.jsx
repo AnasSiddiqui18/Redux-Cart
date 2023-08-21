@@ -10,7 +10,7 @@ const Data = [
   {
     id: 2,
     img: "/images/prod2.png",
-    rating: "★★★★",
+    rating: "★★★★", 
     title: "boAt BassHeads 228",
     price: 649,
     quantity: 1,
