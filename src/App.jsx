@@ -17,7 +17,7 @@ const App = () => {
       handleDragStart(e);
     };
 
-    body.addEventListener("dragstart", onDragStart);
+    body.addEventListener("click", onDragStart);
   }, []);
 
   return (
