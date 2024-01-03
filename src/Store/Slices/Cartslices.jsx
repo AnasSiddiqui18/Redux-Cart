@@ -22,13 +22,12 @@ const Cartslice = createSlice({
   initialState,
   reducers: {
     toggleCart(state, action) {
-      /* console.log(action); */ //? logging the action
       state.isCartOpen = action.payload; //? this action.payload contains true and false to toggle the cart
     },
 
     addItem(state, action) {
       const newItemid = action.payload.id;
-      console.log(action.payload); //? this action.payload contains the item passed when the addtocart button clicked
+      /* console.log(action.payload); */ //? this action.payload contains the item passed when the addtocart button clicked
 
       const existingItem = state.cartItems.find(
         (item) => item.id === newItemid

@@ -150,9 +150,9 @@ body {
   background-color: #fff;
   right: 0;
   width: 370px;
-  transition: 0.3s ease-in;
   overflow-y: auto;
   box-shadow: 1px 1px 10px grey;
+  transition: right 0.3s ease; /* Add transition to the right property */
 }
 
 .cart .cart-top {

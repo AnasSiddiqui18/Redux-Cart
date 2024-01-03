@@ -7,7 +7,6 @@ const App = () => {
 
   const handleDragStart = (e) => {
     e.preventDefault();
-    console.log("Drag started!");
   };
 
   useEffect(() => {

@@ -48,7 +48,7 @@ const Cart = () => {
       )}
 
       {isCartOpen && (
-        <div className={`cart`}>
+        <div className={"cart"}>
           <div className="cart-top">
             {cartItems.length > 0 ? (
               <div className="cart-top-text">Cart ({totalQuantity})</div>
@@ -74,34 +74,34 @@ const Cart = () => {
           )}
 
           <div className="cart-content">
-            {cartItems.map((value, index) => (
-              <div className="box" key={value.id}>
+            {cartItems.map((item, index) => (
+              <div className="box" key={item.id}>
                 <div className="cart-img">
-                  <img src={value.img} alt="" />
+                  <img src={item.img} alt="" />
                 </div>
 
                 <div className="cart-details">
-                  <p>{value.title}</p>
-                  <h4 className="cart-price">${value.price}</h4>
-                  {value.quantity > 1 ? (
+                  <p>{item.title}</p>
+                  <h4 className="cart-price">${item.price}</h4>
+                  {item.quantity > 1 ? (
                     <p className="cart-total-price">
-                      Total: ${value.totalPrice}
+                      Total: ${item.totalPrice}
                     </p>
                   ) : (
-                    <p className="cart-total-price">Total: ${value.price}</p>
+                    <p className="cart-total-price">Total: ${item.price}</p>
                   )}
                 </div>
 
                 <div className="cart-btn">
                   <button
-                    onClick={() => incrementCount(index, value.id)}
+                    onClick={() => incrementCount(index, item.id)}
                     className="increment"
                   >
                     +
                   </button>
-                  <h2>{value.quantity}</h2>
+                  <h2>{item.quantity}</h2>
                   <button
-                    onClick={() => decrementCount(index, value.id)}
+                    onClick={() => decrementCount(index, item.id)}
                     className="decrement"
                   >
                     -

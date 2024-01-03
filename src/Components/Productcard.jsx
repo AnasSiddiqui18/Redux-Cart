@@ -3,8 +3,6 @@ import { useDispatch } from "react-redux";
 import { addItem } from "../Store/Slices/Cartslices";
 
 const Productcard = ({ item, setCartIsEmpty }) => {
-  console.log(item);
-
   const dispatch = useDispatch();
 
   const handleToCart = (item) => {
