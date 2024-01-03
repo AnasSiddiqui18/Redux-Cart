@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import { RxCross2 } from "react-icons/rx";
 import { useSelector, useDispatch } from "react-redux";
 import {
@@ -9,11 +8,9 @@ import {
 } from "../Store/Slices/Cartslices";
 import { useEffect } from "react";
 
-const Cart = ({ cartIsEmpty }) => {
+const Cart = () => {
   const dispatch = useDispatch();
   const { isCartOpen, cartItems } = useSelector((state) => state.cart);
-
-  const [checkout, setcheckout] = useState(false);
 
   const handleCart = (close) => {
     dispatch(toggleCart(close));
@@ -37,8 +34,6 @@ const Cart = ({ cartIsEmpty }) => {
 
   const clearCart = () => {
     dispatch(emptyCart());
-
-    setcheckout(true);
   };
 
   const totalQuantity = cartItems.reduce(

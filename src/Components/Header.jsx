@@ -1,4 +1,3 @@
-import React from "react";
 import { HiShoppingCart } from "react-icons/hi";
 import { toggleCart } from "../Store/Slices/Cartslices";
 import { useDispatch, useSelector } from "react-redux";
