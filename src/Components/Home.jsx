@@ -1,6 +1,7 @@
 import Data from "../Api/Data.jsx";
 import Productcard from "../Components/Productcard.jsx";
 
+// eslint-disable-next-line react/prop-types
 const Home = ({ setCartIsEmpty }) => {
   return (
     <div className="home-section">
