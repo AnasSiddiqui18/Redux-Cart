@@ -62,6 +62,8 @@ const Cartslice = createSlice({
       if (item && item.quantity > 1) {
         item.quantity--;
         item.totalPrice = item.quantity * initialPrice[itemId]; // Update total price based on new quantity
+      } else if (item) {
+        state.cartItems.splice(itemIndex, 1);
       }
     },
 
