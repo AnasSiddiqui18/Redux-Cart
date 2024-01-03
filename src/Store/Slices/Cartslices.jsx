@@ -16,6 +16,7 @@ const initialPrice = {
   8: 3699,
 };
 
+// eslint-disable-next-line react-refresh/only-export-components
 const Cartslice = createSlice({
   name: "cart",
   initialState,
@@ -27,7 +28,6 @@ const Cartslice = createSlice({
 
     addItem(state, action) {
       const newItemid = action.payload.id;
-      const item = action.payload;
       console.log(action.payload); //? this action.payload contains the item passed when the addtocart button clicked
 
       const existingItem = state.cartItems.find(
